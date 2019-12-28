@@ -1,0 +1,30 @@
+{
+
+  "manifest_version": 2,
+  "name": "MillisToDate converter",
+  "version": "1.0",
+
+  "description": "In Firebase console, format any number rapresenting a timestamp since 1970 as a date",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "browser_action": {
+    "default_icon": "icons/border-48.png",
+    "default_title": "MillisToDate converter",
+    "default_popup": "popup/choose_action.html"
+  },
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.firebase.google.com/*"],
+      "js": ["ext.js"]
+    }
+  ]
+
+}
